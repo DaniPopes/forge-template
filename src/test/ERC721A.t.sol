@@ -64,17 +64,17 @@ contract TestERC721A is DSTest {
 
 	function testSafeTransferFromGas() public {
 		vm.startPrank(address(1));
-		erc721a.safeMint(address(1), 1);
+		erc721a.safeMint(address(1), 2);
+		erc721a.safeTransferFrom(address(1), address(2), 1);
 		erc721a.safeTransferFrom(address(1), address(2), 1);
 	}
 
 	function testTransferFromGas() public {
 		vm.startPrank(address(1));
-		erc721a.safeMint(address(1), 1);
+		erc721a.safeMint(address(1), 2);
+		erc721a.transferFrom(address(1), address(2), 1);
 		erc721a.transferFrom(address(1), address(2), 1);
 	}
-
-
 
 	function onERC721Received(
 		address,
