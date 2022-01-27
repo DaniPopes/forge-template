@@ -2,5 +2,11 @@
     "solidity.formatter": "prettier",
     "[solidity]": {
         "editor.defaultFormatter": "JuanBlanco.solidity"
+    },
+    "solidity.packageDefaultDependenciesContractsDirectory": "src",
+    "solidity.packageDefaultDependenciesDirectory": "lib",
+    "search.exclude": { "lib": true },
+    "files.associations": {
+        ".gas-snapshot": "julia"
     }
 }
