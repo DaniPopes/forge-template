@@ -14,6 +14,10 @@ git submodule update --init --recursive
 
 ## install development dependencies
 yarn
+
+## copy .env.example to .env and modify it to deploy contracts
+cp .env.example .env
+nano .env
 ```
 
 ## Features

@@ -1,3 +1,5 @@
+# default env
+OPTIMIZE_RUNS=1000000
 # include .env file and export its env vars
 # (-include to ignore error if it does not exist)
 -include .env
@@ -7,10 +9,10 @@ update		:; forge update
 
 # Build & test
 clean		:; forge clean
-build		:; forge clean && forge build --optimize --optimize-runs ${OPTIMIZE_RUNS}
-test		:; forge clean && forge test --optimize --optimize-runs ${OPTIMIZE_RUNS} -v # --ffi # enable if you need the `ffi` cheat code on HEVM
-trace		:; forge clean && forge test --optimize --optimize-runs ${OPTIMIZE_RUNS} -vvv # --ffi # enable if you need the `ffi` cheat code on HEVM
-snapshot	:; forge clean && forge snapshot --optimize --optimize-runs ${OPTIMIZE_RUNS}
+build		:; forge clean && forge ${MAKECMDGOALS} --optimize --optimize-runs ${OPTIMIZE_RUNS}
+test		:; forge clean && forge ${MAKECMDGOALS} --optimize --optimize-runs ${OPTIMIZE_RUNS}
+trace		:; forge clean && forge test --optimize --optimize-runs ${OPTIMIZE_RUNS} -vvv
+snapshot	:; forge clean && forge ${MAKECMDGOALS} --optimize --optimize-runs ${OPTIMIZE_RUNS}
 
 # Lint
 lint		:; yarn lint
