@@ -21,7 +21,7 @@ contract ContractTest is DSTest {
 		address payable alice = users[0];
 		console.log("alice's address", alice);
 		address payable bob = users[1];
-		hevm.prank(alice);
+		vm.prank(alice);
 		// solhint-disable-next-line avoid-low-level-calls
 		(bool sent, ) = bob.call{ value: 10 ether }("");
 		assertTrue(sent);
