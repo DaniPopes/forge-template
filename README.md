@@ -35,8 +35,6 @@ Includes the Forge cheat codes interface (`VM`), the `console` library and other
 
 `Prettier` and `Solhint` are pre-configured with [official style recommendations](https://docs.soliditylang.org/en/latest/style-guide.html).
 
-Makefile includes 
-
 ## Acknowledgements
 
-Inspired by [@Gakonst](https://github.com/gakonst/)'s and [@FrankieIsLost](https://github.com/FrankieIsLost/forge-template)'s forge templates.
+Inspired by [@gakonst](https://github.com/gakonst/forge-template)'s and [@FrankieIsLost](https://github.com/FrankieIsLost/forge-template)'s forge templates.
