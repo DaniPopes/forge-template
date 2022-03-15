@@ -1,17 +1,9 @@
 {
     "extends": "solhint:recommended",
-    "plugins": [
-        "prettier"
-    ],
+    "plugins": ["prettier"],
     "rules": {
-        "code-complexity": [
-            "error",
-            8
-        ],
-        "compiler-version": [
-            "error",
-            ">=0.6.0 <0.9.0"
-        ],
+        "code-complexity": ["error", 8],
+        "compiler-version": ["error", ">=0.6.0 <0.9.0"],
         "const-name-snakecase": "off",
         "constructor-syntax": "error",
         "func-visibility": [
@@ -20,10 +12,7 @@
                 "ignoreConstructors": true
             }
         ],
-        "max-line-length": [
-            "warn",
-            100
-        ],
+        "max-line-length": ["warn", 100],
         "not-rely-on-time": "off",
         "no-inline-assembly": "off",
         "avoid-tx-origin": "off",

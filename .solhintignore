@@ -1,6 +1,9 @@
 # folders
+.github/
 .yarn/
-lib/
 build/
+cache/
 dist/
+lib/
 node_modules/
+out/

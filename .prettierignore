@@ -1,14 +1,9 @@
 # folders
-artifacts/
+.github/
+.yarn/
 build/
 cache/
-coverage/
 dist/
 lib/
 node_modules/
-typechain/
-
-# files
-coverage.json
-
-.github
+out/
