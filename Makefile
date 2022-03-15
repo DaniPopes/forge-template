@@ -5,7 +5,8 @@
 # Dependencies
 update		:; forge update && git submodule update --init --recursive
 
-# Lint
+# Lint & format
+fmt			:; yarn fmt
 lint		:; yarn lint
 
 # Build & test
