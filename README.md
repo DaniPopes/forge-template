@@ -1,51 +1,41 @@
 # Forge Template
 
-A template for quickly getting started with forge.
+A template for quickly getting started with Forge.
 
 ## Getting Started
 
-```bash
+```sh
 mkdir my-project
 cd my-project
 forge init --template https://github.com/DaniPopes/forge-template
 
-## initialize submodule dependencies
-git submodule update --init --recursive
+# Update libraries
+make update
 
-## install development dependencies
+# Install development dependencies
 yarn
 
-## copy .env.example to .env and modify it to deploy contracts
-cp .env.example .env
-nano .env
+# Run tests
+make test
+# or
+make trace
 ```
 
 ## Features
 
 ### Testing Utilities
 
-Includes common testing contracts like `VM.sol` and `Console.sol`, as well as a `Utilities.sol` contract with common testing methods like creating users with an initial balance.
+Includes the Forge cheat codes interface (`VM`), the `console` library and other testing utilities from `forge-std` and `ds-test`, all bundled up in `src/test/utils/BaseTest.sol`.
 
-### Dependencies
+### Libraries
 
-`ds-test` and `solmate` are already installed.
+[`@Rari-Capital/solmate`](https://github.com/Rari-Capital/solmate) and [`@brockelmore/forge-std`](https://github.com/brockelmore/forge-std).
 
 ### Scripts
 
-Pre-configured `prettier` and `solhint`. Yarn is used for linting, make for everything else.
+`Prettier` and `Solhint` are pre-configured with [official style recommendations](https://docs.soliditylang.org/en/latest/style-guide.html).
 
-```bash
-make build
-make test
-make trace
-make clean
-make snapshot
-
-make lint
-
-yarn lint
-yarn lint:check
-```
+Makefile includes 
 
 ## Acknowledgements
 

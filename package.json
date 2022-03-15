@@ -2,7 +2,7 @@
   "name": "forge-template",
   "author": "DaniPopes",
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A forge template",
   "homepage": "https://github.com/DaniPopes/forge-template#readme",
   "repository": {
@@ -15,7 +15,7 @@
   "devDependencies": {
     "prettier": "^2.5.1",
     "prettier-plugin-solidity": "^1.0.0-beta.19",
-    "solhint": "^3.3.6",
+    "solhint": "^3.3.7",
     "solhint-plugin-prettier": "^0.0.5"
   },
   "scripts": {

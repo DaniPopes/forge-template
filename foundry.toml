@@ -4,8 +4,8 @@ src = "src"
 test = "test"
 out = "out"
 libs = ["lib"]
-remappings = ["@solmate/=lib/solmate/", "ds-test/=lib/ds-test/src/", "@openzeppelin/=lib/openzeppelin-contracts/"]
-libraries = []
+remappings = ["@openzeppelin/=lib/openzeppelin-contracts/", "@chainlink/=lib/chainlink/"]
+# libraries = []
 cache = true
 force = false
 evm_version = "london"

@@ -1,30 +1,43 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import { DSTest } from "ds-test/test.sol";
-import { Utilities } from "./utils/Utilities.sol";
-import { console } from "./utils/Console.sol";
-import { VM } from "./utils/VM.sol";
+import "./utils/BaseTest.sol";
 
-contract ContractTest is DSTest {
-	VM internal immutable vm = VM(HEVM_ADDRESS);
+import { Contract } from "../Contract.sol";
 
-	Utilities internal utils;
-	address payable[] internal users;
+contract ContractTest is BaseTest {
+    address internal alice;
+    address internal bob;
+    Contract internal testContract;
 
-	function setUp() public {
-		utils = new Utilities();
-		users = utils.createUsers(5);
-	}
+    function setUp() public {
+        alice = getRandomAddress(123);
+        bob = getRandomAddress(321);
 
-	function testExample() public {
-		address payable alice = users[0];
-		console.log("alice's address", alice);
-		address payable bob = users[1];
-		vm.prank(alice);
-		// solhint-disable-next-line avoid-low-level-calls
-		(bool sent, ) = bob.call{ value: 10 ether }("");
-		assertTrue(sent);
-		assertGt(bob.balance, alice.balance);
-	}
+        vm.label(alice, "Alice");
+        vm.label(bob, "Bob");
+
+        testContract = new Contract();
+        vm.label(address(testContract), "Test contract");
+    }
+
+    function testExample() public {
+        hoax(alice); // vm.deal & vm.prank
+
+        uint256 aliceBefore = alice.balance;
+        uint256 bobBefore = bob.balance;
+        uint256 amount = 1 ether;
+        console.log("Sending", amount);
+
+        assertGe(aliceBefore, amount);
+        (bool success, ) = bob.call{ value: amount }("");
+        assertTrue(success);
+
+        uint256 aliceDelta = aliceBefore - alice.balance;
+        uint256 bobDelta = bob.balance - bobBefore;
+        assertEq(aliceDelta, bobDelta);
+        assertEq(aliceDelta, amount);
+
+        assertEq(testContract.greet(), "Hello World!");
+    }
 }

@@ -10,7 +10,7 @@
         ],
         "compiler-version": [
             "error",
-            "^0.8.0"
+            ">=0.6.0 <0.9.0"
         ],
         "const-name-snakecase": "off",
         "constructor-syntax": "error",
@@ -21,14 +21,15 @@
             }
         ],
         "max-line-length": [
-            "error",
-            10000
+            "warn",
+            100
         ],
         "not-rely-on-time": "off",
         "no-inline-assembly": "off",
         "avoid-tx-origin": "off",
         "var-name-mixedcase": "off",
         "no-empty-blocks": "off",
+        "avoid-low-level-calls": "off",
         "prettier/prettier": [
             "error",
             {
