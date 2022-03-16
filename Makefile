@@ -3,19 +3,22 @@
 -include .env
 
 # Dependencies
-update		:; forge update && git submodule update --init --recursive
+update		:; forge update
 
 # Lint & format
 fmt			:; yarn fmt
 lint		:; yarn lint
 
 # Build & test
-clean		:; rm -rf cache && rm -rf out && forge clean --root .
 build		:; forge build --root .
-test		:; forge test --root .
-trace		:; forge test -vvv --root .
-trace_all	:; forge test -vvvvv --root .
+clean		:; rm -rf cache && rm -rf out && forge clean --root .
+gas			:; forge test --root . --gas-report
 snapshot	:; forge snapshot --root .
+test		:; forge test --root .
+logs		:; forge test -vv --root .
+trace		:; forge test -vvv --root .
+trace_all	:; forge test -vvvv --root .
+trace_setup	:; forge test -vvvvv --root .
 
 # Transactions
 # Any env var can be set in .env or in the command (e.g. VALUE="123" cast call ...)
