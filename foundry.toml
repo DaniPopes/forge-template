@@ -4,7 +4,7 @@ src = "src"
 test = "test"
 out = "out"
 libs = ["lib"]
-remappings = ["@openzeppelin/=lib/openzeppelin-contracts/", "@chainlink/=lib/chainlink/"]
+remappings = ["@chainlink/=lib/chainlink/", "@openzeppelin/=lib/openzeppelin-contracts/", "@rari-capital/solmate/=lib/solmate/"]
 # libraries = []
 cache = true
 force = false

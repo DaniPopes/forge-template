@@ -1,8 +1,12 @@
 # Node
-node_modules
+node_modules/
 
 # Forge
 out/
 cache/
+
+# Hardhat
+artifacts/
+typechain/
 
 .env
