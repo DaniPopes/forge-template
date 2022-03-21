@@ -2,9 +2,6 @@
 # (-include to ignore error if it does not exist)
 -include .env
 
-# Dependencies
-update		:; forge update
-
 # Lint & format
 fmt			:; yarn fmt
 lint		:; yarn lint
