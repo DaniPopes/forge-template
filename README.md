@@ -9,16 +9,11 @@ mkdir my-project
 cd my-project
 forge init --template https://github.com/DaniPopes/forge-template
 
-# Update libraries
-make update
-
-# Install development dependencies
+# Install libraries and dependencies
 yarn
 
 # Run tests
 make test
-# or
-make trace
 ```
 
 ## Features
