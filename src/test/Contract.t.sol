@@ -6,19 +6,12 @@ import "./utils/BaseTest.sol";
 import { Contract } from "../Contract.sol";
 
 contract ContractTest is BaseTest {
-    address internal alice;
-    address internal bob;
     Contract internal testContract;
 
     function setUp() public {
-        alice = getRandomAddress(123);
-        bob = getRandomAddress(321);
-
-        vm.label(alice, "Alice");
-        vm.label(bob, "Bob");
-
         testContract = new Contract();
-        vm.label(address(testContract), "Test contract");
+        vm.label(address(testContract), "Contract");
+        vm.label(address(this), "ContractTest");
     }
 
     function testExample() public {
