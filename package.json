@@ -26,6 +26,7 @@
         "logs": "forge test -vv --root .",
         "prettier:check": "prettier . --check --ignore-unknown",
         "prettier:write": "prettier . --write --ignore-unknown",
+        "slither": "slither ./src",
         "snapshot": "forge snapshot --root .",
         "solhint:check": "solhint src/**/*.sol",
         "solhint:write": "solhint src/**/*.sol --fix",

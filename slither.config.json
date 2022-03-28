@@ -1,0 +1,3 @@
+{
+    "solc_remaps": "@chainlink/=lib/chainlink/ @openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/ @openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/ @rari-capital/solmate/=lib/solmate/ forge-std/=lib/forge-std/src/ solmate/=lib/solmate/src/ soltracts/=lib/soltracts/src/"
+}
