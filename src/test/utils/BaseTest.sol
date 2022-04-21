@@ -1,15 +1,15 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.6.0 <0.9.0;
 
-import "forge-std/stdlib.sol";
+import "forge-std/Test.sol";
 import "solmate/test/utils/DSTestPlus.sol";
 import "forge-std/console.sol";
 
-abstract contract BaseTest is DSTestPlus, stdCheats {
-    Hevm internal constant vm = Hevm(HEVM_ADDRESS);
-
+abstract contract BaseTest is DSTestPlus, Test {
+    // 0x5dad7600c5d89fe3824ffa99ec1c3eb8bf3b0501
     address internal constant alice =
         address(uint160(uint256(keccak256(abi.encodePacked("alice")))));
+    // 0x3440326f551b8a7ee198cee35cb5d517f2d296a2
     address internal constant bob = address(uint160(uint256(keccak256(abi.encodePacked("bob")))));
     address internal constant dead = 0x000000000000000000000000000000000000dEaD;
 
