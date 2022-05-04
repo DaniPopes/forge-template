@@ -2,10 +2,10 @@
 pragma solidity >=0.6.0 <0.9.0;
 
 import "forge-std/Test.sol";
-import "solmate/test/utils/DSTestPlus.sol";
 import "forge-std/console.sol";
+import "forge-std/console2.sol";
 
-abstract contract BaseTest is DSTestPlus, Test {
+abstract contract BaseTest is Test {
     // 0x5dad7600c5d89fe3824ffa99ec1c3eb8bf3b0501
     address internal constant alice =
         address(uint160(uint256(keccak256(abi.encodePacked("alice")))));
@@ -26,19 +26,17 @@ abstract contract BaseTest is DSTestPlus, Test {
     uint256 private gasBefore = 1;
     uint256 private gasCounter = 1;
 
-    function startMeasuringGas(string memory _label) internal virtual override {
+    function startMeasuringGas(string memory _label) internal virtual {
         label = _label;
         uint256 _gasBefore = gasleft();
         gasBefore = _gasBefore;
     }
 
-    function stopMeasuringGas() internal virtual override {
+    function stopMeasuringGas() internal virtual {
         uint256 gasAfter = gasleft();
 
-        // remove 100 for warm SLOAD, 500
+        // remove 100 for warm SLOAD
         uint256 gasDelta = gasBefore - gasAfter - 100;
-        if (gasDelta > 500) gasDelta -= 500;
-        if (gasCounter++ == 1 && gasDelta > 1600) gasDelta -= 1600;
         console.log(string(abi.encodePacked(label, " Gas")), gasDelta);
     }
 
