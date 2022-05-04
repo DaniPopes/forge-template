@@ -20,11 +20,11 @@ make test
 
 ### Testing Utilities
 
-Includes the Forge cheat codes interface (`VM`), the `console` library and other testing utilities from `forge-std` and `ds-test`, all bundled up in `src/test/utils/BaseTest.sol`.
+Includes the Forge cheat codes interface (`VM`), the `console` library and other testing utilities, which can be accessed by importing `src/test/utils/BaseTest.sol` into your test files.
 
 ### Libraries
 
-[`@Rari-Capital/solmate`](https://github.com/Rari-Capital/solmate) and [`@brockelmore/forge-std`](https://github.com/brockelmore/forge-std).
+Requires [`@brockelmore/forge-std`](https://github.com/brockelmore/forge-std).
 
 ### Scripts
 
