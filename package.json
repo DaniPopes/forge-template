@@ -26,7 +26,8 @@
         "prettier:write": "prettier . --write --ignore-unknown",
         "slither": "slither ./src",
         "solhint:check": "solhint src/**/*.sol",
-        "solhint:write": "solhint src/**/*.sol --fix"
+        "solhint:write": "solhint src/**/*.sol --fix",
+        "test": "forge test"
     },
     "simple-git-hooks": {
         "pre-commit": "npx lint-staged"
