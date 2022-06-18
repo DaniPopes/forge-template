@@ -8,11 +8,11 @@
     "repository": "https://github.com/DaniPopes/forge-template.git",
     "private": "true",
     "devDependencies": {
-        "lint-staged": "^12.3.7",
-        "prettier": "^2.5.1",
+        "lint-staged": "^13.0.2",
+        "prettier": "^2.7.1",
         "prettier-plugin-solidity": "^1.0.0-beta.19",
         "rimraf": "^3.0.2",
-        "simple-git-hooks": "^2.7.0",
+        "simple-git-hooks": "^2.8.0",
         "solhint": "^3.3.7",
         "solhint-plugin-prettier": "^0.0.5"
     },
@@ -21,19 +21,12 @@
         "build": "forge build --root .",
         "clean": "rimraf cache && rimraf out && forge clean --root .",
         "fmt": "yarn prettier:write",
-        "gas": "forge test --root . --gas-report",
         "lint": "yarn solhint:check",
-        "logs": "forge test -vv --root .",
         "prettier:check": "prettier . --check --ignore-unknown",
         "prettier:write": "prettier . --write --ignore-unknown",
         "slither": "slither ./src",
-        "snapshot": "forge snapshot --root .",
         "solhint:check": "solhint src/**/*.sol",
-        "solhint:write": "solhint src/**/*.sol --fix",
-        "test": "forge test --root .",
-        "trace": "forge test -vvv --root .",
-        "trace:all": "forge test -vvvv --root .",
-        "trace:setup": "forge test -vvvvv --root ."
+        "solhint:write": "solhint src/**/*.sol --fix"
     },
     "simple-git-hooks": {
         "pre-commit": "npx lint-staged"
