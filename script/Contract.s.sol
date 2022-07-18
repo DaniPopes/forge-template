@@ -3,7 +3,7 @@ pragma solidity ^0.8.0;
 
 import "forge-std/Script.sol";
 
-import { Contract } from "../Contract.sol";
+import { Contract } from "../src/Contract.sol";
 
 contract ContractScript is Script {
     Contract public testContract;

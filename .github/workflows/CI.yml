@@ -40,40 +40,7 @@ jobs:
       - name: Run yarn lint
         run: yarn lint
 
-  # prettier:
-  #   name: Prettier Formatting
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Setup node
-  #       uses: actions/setup-node@v2
-  #       with:
-  #         node-version: "16"
-
-  #     - name: Checkout the repo
-  #       uses: actions/checkout@v2
-
-  #     - name: Cache dependencies
-  #       uses: actions/cache@v2
-  #       env:
-  #         cache-name: yarn-cache
-  #       with:
-  #         path: |
-  #           ~/.npm
-  #           ~/.cache
-  #           **/node_modules
-  #         key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('yarn.lock') }}
-  #         restore-keys: |
-  #           ${{ runner.os }}-build-${{ env.cache-name }}-
-  #           ${{ runner.os }}-build-
-  #           ${{ runner.os }}-
-
-  #     - name: Run yarn install
-  #       run: yarn install --frozen-lockfile
-
-  #     - name: Run prettier check
-  #       run: yarn prettier:check
-
-  test:
+  tests:
     name: Forge tests
     runs-on: ubuntu-latest
 
@@ -93,5 +60,11 @@ jobs:
         with:
           version: nightly
 
+      - name: Check contract sizes
+        run: forge build --sizes
+
       - name: Run tests
-        run: make test
+        run: forge test
+        env:
+          # Only fuzz intensely if we're running this action on a push to master or for a PR going into master:
+          FOUNDRY_PROFILE: ${{ (github.ref == 'refs/heads/master' || github.base_ref == 'master') && 'ci' }}

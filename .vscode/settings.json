@@ -5,7 +5,14 @@
     },
     "solidity.packageDefaultDependenciesContractsDirectory": "src",
     "solidity.packageDefaultDependenciesDirectory": "lib",
-    "search.exclude": { "lib": true },
+    "search.exclude": {
+        "abi": true,
+        "coverage": true,
+        "cache": true,
+        "lib": true,
+        "node_modules": true,
+        "out": true
+    },
     "files.associations": {
         ".gas-snapshot": "julia"
     }

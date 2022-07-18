@@ -2,11 +2,16 @@
 node_modules/
 
 # Forge
+broadcast/
 out/
 cache/
 
 # Hardhat
 artifacts/
 typechain/
+
+# lcov
+report/
+lcov.info
 
 .env

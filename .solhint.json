@@ -13,10 +13,11 @@
             }
         ],
         "max-line-length": "off",
+        "func-name-mixedcase": "off",
         "not-rely-on-time": "off",
         "no-inline-assembly": "off",
+        "avoid-tx-origin": "off",
         "var-name-mixedcase": "off",
-        "func-name-mixedcase": "off",
         "no-empty-blocks": "off",
         "avoid-low-level-calls": "off",
         "prettier/prettier": [
@@ -25,6 +26,11 @@
                 "endOfLine": "auto"
             }
         ],
-        "reason-string": "off"
+        "reason-string": [
+            "off",
+            {
+                "maxLength": 64
+            }
+        ]
     }
 }

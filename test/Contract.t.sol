@@ -3,7 +3,7 @@ pragma solidity ^0.8.0;
 
 import "./utils/BaseTest.sol";
 
-import { Contract } from "../Contract.sol";
+import { Contract } from "../src/Contract.sol";
 
 contract ContractTest is BaseTest {
     Contract internal testContract;

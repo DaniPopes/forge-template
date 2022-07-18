@@ -5,3 +5,5 @@ cache/
 lib/
 node_modules/
 out/
+abi/
+report/

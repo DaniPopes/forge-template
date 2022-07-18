@@ -1,3 +1,5 @@
 {
-    "solc_remaps": "@chainlink/=lib/chainlink/ @openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/ @openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/ @rari-capital/solmate/=lib/solmate/ forge-std/=lib/forge-std/src/ solmate/=lib/solmate/src/ soltracts/=lib/soltracts/src/"
+    "detectors_to_exclude": "conformance-to-solidity-naming-conventions,uninitialized-local-variables,low-level-calls,block-timestamp,solc-version",
+    "solc_remaps": "@chainlink/=lib/chainlink/ @openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/ @openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/ @rari-capital/solmate/=lib/solmate/ forge-std/=lib/forge-std/src/ solmate/=lib/solmate/src/",
+    "filter_paths": "lib"
 }
